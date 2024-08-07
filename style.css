@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #6b6666;
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+button{
+    width: 250px;
+    height: 250px;
+    background-color: transparent;
+    border: 3px solid #000;
+    border-radius: 15px;
+    cursor: pointer;
+}
+button .linha{
+    /*Se nao colocar o display block não 
+    aparece os span*/
+    display: block;
+    width: 200px;
+    height: 10px;
+    background-color: #000;
+    /*O margin é para alinhar ele ao centro 
+    do button*/
+    margin: 40px auto;
+    /*Para usar a propriedade transform-origin tem
+    que usar relative tambem para fazer a animação*/
+    position: relative;
+    transform-origin: center;
+    transition: all .5s ease-in-out;
+}
+/*O ponto .active tem q ser colado na tag button*/
+/*Seleciona o primeiro filho o span*/
+button.active .linha:nth-child(1){
+    transform: translateY(50px) rotate(-50deg);
+    background: rgb(255, 0, 0);
+}
+button.active .linha:nth-child(3){
+    transform: translateY(-50px) rotate(50deg);
+    background: rgb(255, 0, 0);
+}
+button.active .linha:nth-child(2){
+    /* transform: translateY(-36px) rotate(45deg);
+    background: red; */
+    opacity: 0;
+    /* display: none; */
+}
+button.active{
+    background: #a9a5a5;
+    border: 5px solid #f00;
+    box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.35), inset 0 5px 5px rgba(0, 0, 0, 0.5),
+    inset 0 15px 25px rgba(0, 0, 0, 0.35),
+    inset 0 25px 35px rgba(0, 0, 0, 0.35);
+
+
+    /* box-shadow: 5px 8px 12px rgba(0,0,0,0.4),
+    inset -5px -8px 12px rgba(0,0,0,0.2),
+    inset 10px 8px 12px rgba(0,0,0,0.2); */
+    /* transition: background-color 0.5s ease, color 0.5s ease, transform 0.5s ease;  */
+}
